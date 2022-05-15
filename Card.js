@@ -14,7 +14,7 @@ let gameEl = document.getElementById("game-el");
 let moneyEl = document.getElementById("money-el");
 let addmoneyEl = document.getElementById("addmoney-el");
 let player = {
-    name: "Pranav",
+    name: "Player",
     cash: 0    
 }
  function addmoney(){
