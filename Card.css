@@ -1,0 +1,65 @@
+body{
+    background:black;
+
+    text-align:center;
+}
+
+h1{
+    color:goldenrod;
+    font-family: 'Trebuchet MS';
+    font-size:60px;
+    text-align:center;
+}
+p{
+    color:green;
+    font-size: 40px;
+    text-align: center;
+}
+#message-el{
+    font-style: italic;
+}
+button{
+    background-color: green;
+    color:white;
+    border:none;
+    margin:0 auto;
+    align-items: center;
+    font-size:30px;
+    padding:15px;
+    text-align:center;
+    cursor: pointer;
+}
+#newcard-el:disabled{
+    background-color: lightgreen;
+    color:aliceblue;
+}
+#player-el{
+    color:lightpink;
+}
+#startgame-el:disabled{
+    background-color: lightgreen;
+    color:aliceblue;
+}
+#money-el{
+    background-color: rgb(228, 60, 38);
+    color:white;
+    border:none;
+    margin:0 auto;
+    align-items: center;
+    font-size:30px;
+    padding:15px;
+    text-align:center;
+    cursor: pointer;
+}
+#money-el::content,#money-el::active{
+    background:blue;
+
+
+}
+#addmoney-el{
+    background:whitesmoke;
+    font-size:30px;
+    padding:10px;
+    text-align: center;
+}
+
