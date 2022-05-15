@@ -1,22 +1,47 @@
+*{
+    margin:0px;
+    padding:0px;
+}
 body{
-    background:black;
-
+    height:100%;
+    background-image:url("blackjack_background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     text-align:center;
+    background-attachment: fixed;
+}
+#game-el{
+    background-color: rgba(0, 0, 0, 0.411);
+    height:100%;
+    width:100%;
+    padding-top: 2%;
+    padding-bottom: 3.3%;
 }
 
 h1{
-    color:goldenrod;
+    color:rgb(228, 171, 26);
     font-family: 'Trebuchet MS';
-    font-size:60px;
+    font-size:5em;
     text-align:center;
 }
-p{
-    color:green;
-    font-size: 40px;
+#message-el{
+    color:rgb(197, 219, 197);
+    font-size: 2.5em;
+    margin:2% 0%;
+    font-family: arial;
     text-align: center;
 }
-#message-el{
-    font-style: italic;
+#card-el{
+    margin: 1% 0%;
+    color:white;
+    font-size:2.5em;
+}
+#sum-el{
+    margin: 1% 0%;
+    color:white;
+    font-size:2.5em;
+    
 }
 button{
     background-color: green;
@@ -34,6 +59,8 @@ button{
     color:aliceblue;
 }
 #player-el{
+    margin:2% 0%;
+    font-size:38px;
     color:lightpink;
 }
 #startgame-el:disabled{
