@@ -15,17 +15,10 @@ let moneyEl = document.getElementById("money-el");
 let addmoneyEl = document.getElementById("addmoney-el");
 let player = {
     name: "Player",
-    cash: 0    
+    cash: 0
 }
- function addmoney(){
-addmoneyEl.value = Number(addmoneyEl.value);
-player.cash =addmoneyEl.value; 
-console.log(player.cash);
-playerEl.textContent = player.name + " : " + "$" + player.cash;
-addmoneyEl.onreset;
- }
-playerEl.textContent = player.name + " : " + "$" + player.cash;
 
+playerEl.textContent = player.name + " : " + "$" + player.cash;
 function getrandomcard() {
 
     let num = Math.floor(Math.random() * 13) + 1;
@@ -37,25 +30,27 @@ function getrandomcard() {
         return num;
     }
 }
-function startgame(firstcard, secondcard) {
-    cashflow();
-
-    player.cash = player.cash - 3;
-    if (player.cash < 1) {
-        alerting();
+function startgame() {
+    if (player.cash === 0) {
         newcardEl.disabled = true;
         startgameEl.disabled = true;
-        messageEl.textContent = "Please refill your wallet"
-
-    } else {
-        playerEl.textContent = player.name + " : " + "$" + player.cash;
+        messageEl.textContent = "you are out of money,Please refill your wallet";
     }
-    firstcard = getrandomcard();
-    secondcard = getrandomcard();
-    cards = [firstcard, secondcard];
-    cardsum = firstcard + secondcard;
-    isAlive = true;
-    rendergame();
+    else if (player.cash < 3) {
+        newcardEl.disabled = true;
+        startgameEl.disabled = true;
+        messageEl.textContent = "Insufficient Balance,Please refill your wallet"
+
+    } else{
+        player.cash = player.cash - 3;
+        playerEl.textContent = player.name + " : " + "$" + player.cash;
+        let firstcard = getrandomcard();
+        let secondcard = getrandomcard();
+        cards = [firstcard, secondcard];
+        cardsum = firstcard + secondcard;
+        isAlive = true;
+        rendergame();
+    }
 }
 function rendergame() {
     cardEl.textContent = "Cards : "
@@ -64,36 +59,36 @@ function rendergame() {
     }
     sumEl.textContent = "Sum : " + cardsum;
     if (cardsum === 21) {
-        message = "You have got a blackjack";
+        messageEl.textContent = "You have got a blackjack";
         hasblackjack = true;
         newcardEl.disabled = true;
+        startgameEl.disabled = true;
     } else if (cardsum < 21) {
-        message = "Do you want to draw a new card";
+        messageEl.textContent = "Do you want to draw a new card";
+        startgameEl.disabled = true;
+        newcardEl.disabled = false;
     } else {
-        message = "You are out of the game";
+        messageEl.textContent = "You are out of the game";
         isAlive = false;
         newcardEl.disabled = true;
+        startgameEl.disabled = true;
     }
-    messageEl.textContent = message;
-    startgameEl.disabled = true;
-
-
 }
+
 function newcard() {
-    if (hasblackjack === false && isAlive === true && player.cash != 0) {
-        message = "Drawing a new card from the deck";
-        messageEl.textContent = message;
+   
+    if (isAlive === true && player.cash >=1) {
+      
+        messageEl.textContent = "Drawing a new card from the deck";
         let thirdcard = getrandomcard();
         cards.push(thirdcard);
         cardsum += thirdcard;
         player.cash -= 1;
+      rendergame();
         playerEl.textContent = player.name + " : " + "$" + player.cash;
+    } else if( playercash < 1)  {
+        messageEl.textContent = "Insufficient Balance,Please refill your wallet"
         rendergame();
-
-
-    } else {
-        newcardEl.disabled = true;
-        alert();
     }
 }
 
@@ -101,32 +96,19 @@ function newgame() {
 
     startnewgame();
 }
-function startnewgame(){
+function startnewgame() {
     firstcard = null;
     secondcard = null;
     thirdcard = null;
-    messageEl.textContent="Want to play a Round?";
+    messageEl.textContent = "Want to play a Round?";
     cardEl.textContent = "Cards:";
     sumEl.textContent = "Sum : ";
-    cashflow();
-
-}
-function cashflow(){
-if (player.cash === 0){
-    newcardEl.disabled = true;
-    startgameEl.disabled = true;
-messageEl.textContent="you are out of money";
-
-
-} else if(player.cash === 1  ||player.cash===2){
-   newcardEl.disabled = true;
-startgameEl.disabled = true;
-messageEl.textContent="Insufficient Balance to continue the game";
-playerEl.textContent = player.name + " : " + "$" + player.cash;
-}
-else{
-    newcardEl.disabled = false;
     startgameEl.disabled = false;
+    newcardEl.disabled = false;
 }
+function addmoney() {
+    addmoneyEl.value = Number(addmoneyEl.value);
+    player.cash = addmoneyEl.value;
+    playerEl.textContent = player.name + " : " + "$" + player.cash;
+    
 }
-
