@@ -15,19 +15,18 @@ body{
     background-color: rgba(0, 0, 0, 0.411);
     height:100%;
     width:100%;
-    padding-top: 2%;
-    padding-bottom: 3.3%;
+    padding-bottom: 0.8%;
 }
 
 h1{
     color:rgb(228, 171, 26);
     font-family: 'Trebuchet MS';
-    font-size:5em;
+    font-size:4em;
     text-align:center;
 }
 #message-el{
     color:rgb(197, 219, 197);
-    font-size: 2.5em;
+    font-size: 2em;
     margin:2% 0%;
     font-family: arial;
     text-align: center;
@@ -35,33 +34,36 @@ h1{
 #card-el{
     margin: 1% 0%;
     color:white;
-    font-size:2.5em;
+    font-size:1.8em;
 }
 #sum-el{
     margin: 1% 0%;
     color:white;
-    font-size:2.5em;
+    font-size:1.8em;
     
 }
 button{
-    background-color: green;
+    background-color: rgb(102, 163, 102);
     color:white;
     border:none;
     margin:0 auto;
     align-items: center;
-    font-size:30px;
-    padding:15px;
+    font-size:1.2em;
+    padding:1.5%;
     text-align:center;
     cursor: pointer;
 }
+#newcard-el{
+    background-color: rgb(250, 108, 57);
+}
 #newcard-el:disabled{
-    background-color: lightgreen;
+    background-color: rgb(247, 217, 206);
     color:aliceblue;
 }
 #player-el{
     margin:2% 0%;
-    font-size:38px;
-    color:lightpink;
+    font-size:28px;
+    color:white;
 }
 #startgame-el:disabled{
     background-color: lightgreen;
@@ -73,8 +75,8 @@ button{
     border:none;
     margin:0 auto;
     align-items: center;
-    font-size:30px;
-    padding:15px;
+    font-size:1.2em;
+    padding:1%;
     text-align:center;
     cursor: pointer;
 }
@@ -85,8 +87,7 @@ button{
 }
 #addmoney-el{
     background:whitesmoke;
-    font-size:30px;
-    padding:10px;
+    font-size:1.3em;
     text-align: center;
 }
 
